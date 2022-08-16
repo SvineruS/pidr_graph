@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <title>p5.js example</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>    <!-- <script src="../addons/p5.sound.js"></script> -->
+    <script src="sketch.js"></script>
+</head>
+
+<body>
+<main>
+    <table>
+        <tr>
+            <td>
+                <h2>Fee params</h2>
+                <br>
+                P:
+                <input type="range" id="p" min="0" max="10" step="0.01" value="0.3"/>
+                I:
+                <input type="range" id="i" min="0" max="10" step="0.001" value="0.5"/>
+                D:
+                <input type="range" id="d" min="0" max="0.1" step="0.001" value="0.01"/>
+                <br>
+                <input type="checkbox" id="last_eth"/>
+                Враховувати в баланс тільки повністю завершені транзи (після витрат)
+                <br>
+                <input type="checkbox" id="lower_bal" checked="checked"/>
+                Намагатися зменшити фі якщо дохід > витрати
+                <br>
+                Розмір вікна (проміжок часу) для усереднення балансу перед ПІДР
+                <input type="range" id="bal_window" min="1" max="50" step="1" value="1"/>
+                <br>
+                Мінімальний tranfer fee
+                <input type="range" id="min_fee" min="0.5" max="3" step="0.1" value="1"/>
+
+            </td>
+            <td>
+
+
+                <h2>Simulation params</h2>
+                Seed:
+                <input type="range" id="seed" min="0" max="1000" step="1" value="0"/>
+                <br>
+                Як часто роблять трансфери:
+                <input type="range" id="rate" min="0" max="1" step="0.01" value="0.5"/>
+                <br>
+                Як довго контракт чекатє ще один трансфер у пачку:
+                <input type="range" id="tf" min="1" max="100" step="1" value="10"/>
+                <br>
+                Ціна одного трансферу (не враховуючи базові витрати контракту):
+                <input type="range" id="batcher_per_tranfser" min="0" max="10" step="0.001" value="0.5"/>
+
+                <br>
+                Як часто змінюються валідатори:
+                <input type="range" id="vs_rate" min="0" max="1" step="0.01" value="0.2"/>
+                <br>
+                Ціна обробки одного валідатора:
+                <input type="range" id="vs_cost" min="0" max="1" step="0.01" value="0.2"/>
+
+                <br>
+                Флуктуації ціни Eth
+                <input type="range" id="eth_fluctuation" min="0" max="2" step="0.01" value="0.5"/>
+                <br>
+
+            </td>
+            <td>
+                <h2>Легенда</h2>
+                Синя лінія - transfer fee <br>
+                Зелена лінія = дохід - витрати <br>
+                <br>
+                Сині кружочки - транзакція юзера в амб <br>
+                Помаранчеві кружочки - транзакція релею в етх <br>
+                Червоні кружочки - зміна валідаторів <br>
+                <br>
+                Червона горизонтальна лінія - нуль <br>
+                Фіолетова горизонтальна лінія - базова ціна транзи + ціна за один трансфер <br>
+                Чорні горизонтальні лінії - в принципі нічого не означають
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+</main>
+</body>
+
+</html>
