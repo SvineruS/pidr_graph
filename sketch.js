@@ -76,7 +76,7 @@ function calc() {
             bal += balance[i];
         bal /= bal_window.value;
 
-        if (lower_bal.checked && bal > 0)
+        if (!lower_bal.checked && bal > 0)
             bal = 0
 
         return max(min_fee.value, pid.compute(bal))
