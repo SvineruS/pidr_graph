@@ -33,15 +33,15 @@
                 <input type="range" id="d" min="0" max="0.1" step="0.001" value="0.01"/>
                 <br>
                 <input type="checkbox" id="last_eth"/>
-                Враховувати в баланс тільки повністю завершені транзи (після витрат)
+                Include in the balance only fully completed transactions (after expenses)
                 <br>
                 <input type="checkbox" id="lower_bal" checked="checked"/>
-                Намагатися зменшити фі якщо дохід > витрати
+                Try to reduce fee if income > expenses
                 <br>
-                Розмір вікна (проміжок часу) для усереднення балансу перед ПІДР
+                Window size (time period) for averaging the balance before the PIDR
                 <input type="range" id="bal_window" min="1" max="50" step="1" value="1"/>
                 <br>
-                Мінімальний tranfer fee
+                Minimum transfer fee
                 <input type="range" id="min_fee" min="0.5" max="3" step="0.1" value="1"/>
 
             </td>
@@ -52,40 +52,40 @@
                 Seed:
                 <input type="range" id="seed" min="0" max="1000" step="1" value="0"/>
                 <br>
-                Як часто роблять трансфери:
+                How often are transfers made:
                 <input type="range" id="rate" min="0" max="1" step="0.01" value="0.5"/>
                 <br>
-                Як довго контракт чекатє ще один трансфер у пачку:
+                How long is the contract waiting for another transfer in batch:
                 <input type="range" id="tf" min="1" max="100" step="1" value="10"/>
                 <br>
-                Ціна одного трансферу (не враховуючи базові витрати контракту):
+                The price of one transfer (excluding the base gas fee for contract call):
                 <input type="range" id="batcher_per_tranfser" min="0" max="10" step="0.001" value="0.5"/>
 
                 <br>
-                Як часто змінюються валідатори:
+                How often do validators change:
                 <input type="range" id="vs_rate" min="0" max="1" step="0.01" value="0.2"/>
                 <br>
-                Ціна обробки одного валідатора:
+                Price of processing one validator:
                 <input type="range" id="vs_cost" min="0" max="1" step="0.01" value="0.2"/>
 
                 <br>
-                Флуктуації ціни Eth
+                Eth price fluctuations
                 <input type="range" id="eth_fluctuation" min="0" max="2" step="0.01" value="0.5"/>
                 <br>
 
             </td>
             <td>
                 <h2>Легенда</h2>
-                Синя лінія - transfer fee <br>
-                Зелена лінія = дохід - витрати <br>
+                Blue line - transfer fee <br>
+                Green line = income - expenses <br>
                 <br>
-                Сині кружочки - транзакція юзера в амб <br>
-                Помаранчеві кружочки - транзакція релею в етх <br>
-                Червоні кружочки - зміна валідаторів <br>
+                Blue dots - AMB txs (fee cost) <br>
+                Orange dots - Relay's ETH txs (gas cost) <br>
+                Red dots - validator change (processing cost) <br>
                 <br>
-                Червона горизонтальна лінія - нуль <br>
-                Фіолетова горизонтальна лінія - базова ціна транзи + ціна за один трансфер <br>
-                Чорні горизонтальні лінії - в принципі нічого не означають
+                Red horizontal line - zero <br>
+                Purple horizontal line - base contract call cost + 1 transfer cost<br>
+                Black  horizontal lines - mean nothing, just a ruler
             </td>
         </tr>
     </table>
